@@ -2,6 +2,8 @@ pub use prelude::*;
 pub use opcodes::*;
 pub use peripherals::Peripherals;
 
+use core::prelude::v1::*;
+
 pub struct Machine {
     regs: [Byte; 16],
     addr: Addr,
@@ -77,7 +79,7 @@ impl Machine {
             0xb => (3, 2),
             0xf => (3, 3),
 
-            _ => panic!("Impossible")
+            _ => (0, 0) // panic!("Impossible")
         }
     }
 
@@ -103,7 +105,7 @@ impl Machine {
             (3, 2) => 0xb,
             (3, 3) => 0xf,
 
-            _ => panic!("Impossible")
+            _ => 0x0 // panic!("Impossible")
         }
     }
 
