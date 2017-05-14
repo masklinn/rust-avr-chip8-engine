@@ -2,8 +2,6 @@ pub use prelude::*;
 pub use opcodes::*;
 pub use peripherals::Peripherals;
 
-use core::prelude::v1::*;
-
 pub struct Machine {
     regs: [Byte; 16],
     addr: Addr,
